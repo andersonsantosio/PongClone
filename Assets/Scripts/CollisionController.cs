@@ -34,9 +34,11 @@ public class CollisionController : MonoBehaviour {
         } else if (collision.gameObject.name == "WallLeft") {
             Debug.Log("Collision on WallLeft");
             this.scoreController.GoalPlayer1();
+            StartCoroutine(this.ballMovement.StartBall(true));
         } else if (collision.gameObject.name == "WallRight") {
             Debug.Log("Collision on WallRight");
             this.scoreController.GoalPlayer2();
+            StartCoroutine(this.ballMovement.StartBall(false));
         }
     }
 }
